@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "io-weather",
+  "version": "${version}",
+  "name": "io-weather",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "GPL-3.0",
+  "icon": "assets/io-weather/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "fabric-datagen": [
+      "de.flunar.ioWeather.client.IoWeatherDataGenerator"
+    ],
+    "client": [
+      "de.flunar.ioWeather.client.IoWeatherClient"
+    ],
+    "main": [
+      "de.flunar.ioWeather.IoWeather"
+    ]
+  },
+  "mixins": [
+    "io-weather.mixins.json",
+    {
+      "config": "io-weather.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
